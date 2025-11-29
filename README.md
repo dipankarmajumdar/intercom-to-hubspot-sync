@@ -29,7 +29,7 @@ cd intercom-to-hubspot-sync
 npm install
 ```
 
-# Environmental Veriable:
+# Environmental Veriable (.env):
 
 | Variable               | Description                                        |
 | ---------------------- | -------------------------------------------------- |
