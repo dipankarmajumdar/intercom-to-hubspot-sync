@@ -28,3 +28,79 @@ git clone https://github.com/dipankarmajumdar/intercom-to-hubspot-sync.git
 cd intercom-to-hubspot-sync
 npm install
 ```
+
+# Environmental Veriable:
+
+| Variable               | Description                                        |
+| ---------------------- | -------------------------------------------------- |
+| INTERCOM_CLIENT_ID     | Intercom App Client ID for OAuth.                  |
+| INTERCOM_CLIENT_SECRET | Intercom App Client Secret.                        |
+| HUBSPOT_CLIENT_ID      | HubSpot App Client ID for OAuth.                   |
+| HUBSPOT_CLIENT_SECRET  | HubSpot App Client Secret.                         |
+| REDIRECT_URI           | The configured redirect URI for OAuth callback.    |
+| HUBSPOT_REFRESH_TOKEN  | HubSpot Refresh Token (after initial OAuth grant). |
+| INTERCOM_ACCESS_TOKEN  | Intercom Access Token (or use OAuth flow).         |
+
+# Output Log:
+
+```bash
+==================================================
+Intercom to HubSpot Sync Started
+==================================================
+
+📦 Fetching data from Intercom endpoint: /companies
+
+✅ Successfully fetched a total of 4 from /companies.
+
+📦 Fetching data from Intercom endpoint: /contacts
+
+✅ Successfully fetched a total of 4 from /contacts.
+
+Found 4 Companies and 4 Users in Intercom.
+
+==================================================
+Syncing Companies to HubSpot...
+[Update] companies ID: 225932800699 updated.
+[Update] companies ID: 225932784361 updated.
+[Update] companies ID: 224635803364 updated.
+[Update] companies ID: 225932784364 updated.
+
+Companies Sync Complete. Total 4 synced.
+
+==================================================
+Syncing Users (Contacts) to HubSpot...
+[Update] contacts ID: 337368796893 updated.
+[Update] contacts ID: 337368648396 updated.
+[Update] contacts ID: 337323062007 updated.
+[Update] contacts ID: 337330921180 updated.
+
+Contacts Sync Complete. Total 4 synced.
+
+==================================================
+Creating Associations (Company → Users)...
+[Assoc] Contact 337368796893 → Company 225932800699
+[Assoc] Contact 337368648396 → Company 225932800699
+[Assoc] Contact 337323062007 → Company 225932800699
+[Assoc] Contact 337330921180 → Company 225932800699
+[Assoc] Contact 337368796893 → Company 225932784361
+[Assoc] Contact 337368648396 → Company 225932784361
+[Assoc] Contact 337323062007 → Company 225932784361
+[Assoc] Contact 337330921180 → Company 225932784361
+[Assoc] Contact 337368796893 → Company 224635803364
+[Assoc] Contact 337368648396 → Company 224635803364
+[Assoc] Contact 337323062007 → Company 224635803364
+[Assoc] Contact 337330921180 → Company 224635803364
+[Assoc] Contact 337368796893 → Company 225932784364
+[Assoc] Contact 337368648396 → Company 225932784364
+[Assoc] Contact 337323062007 → Company 225932784364
+[Assoc] Contact 337330921180 → Company 225932784364
+
+==================================================
+Sync Process Finished Successfully!
+
+Summary:
+
+- Companies Synced: 4
+- Contacts Synced: 4
+- Associations Created: 16
+```
